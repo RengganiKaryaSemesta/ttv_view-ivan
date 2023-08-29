@@ -13,7 +13,7 @@ trait FetchApiDataTrait
         $response = Http::get("https://patientmonitoring.my.id/api/$url");
 
         if ($response->successful()) {
-            return collect($response->json());
+            return collect($response->json())->sortByDesc('id');
         } else {
             return collect();
         }

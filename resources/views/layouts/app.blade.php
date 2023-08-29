@@ -21,7 +21,7 @@
                 <a class="nav-link" href="{{route('respiration_rate.index')}}">Respiration Rate</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Heart Rate</a>
+                <a class="nav-link" href="{{route('heart_rate.index')}}">Heart Rate</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">SpO2</a>
