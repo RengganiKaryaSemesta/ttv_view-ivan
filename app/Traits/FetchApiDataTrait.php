@@ -22,7 +22,7 @@ trait FetchApiDataTrait
     {
      
         
-        $response = Http::post('https://patientmonitoring.my.id/api/respirationRate', $data);
+        $response = Http::post("https://patientmonitoring.my.id/api/$url", $data);
         
         // Get the response body as a string
         return $response->successful();

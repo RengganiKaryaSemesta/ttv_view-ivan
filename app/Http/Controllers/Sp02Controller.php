@@ -6,19 +6,19 @@ use App\Traits\FetchApiDataTrait;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
-class RespirationRateController extends Controller
+class Sp02Controller extends Controller
 {
     use FetchApiDataTrait;
-
     public function index()
     {
-        $data = $this->fetchApiData('respirationRate');
+        $apiUrl = 'spo2';
+        $spo2Data = $this->fetchApiData($apiUrl);
 
-        return view('respiration_rate', ['data' => $data]);
+        return view('sp02', ['spo2Data' => $spo2Data]);
     }
     public function create()
     {
-        return view('create_respiration_rate');
+        return view('create_spo2');
     }
 
     public function store(Request $request)
@@ -27,23 +27,23 @@ class RespirationRateController extends Controller
             // Validation
             $request->validate([
                 'patient_id' => 'required',
-                'breaths' => 'required',
+                'oxygen_in_blood' => 'required',
             ]);
 
-            $apiUrl = 'respirationRate';
+            $apiUrl = 'spo2';
 
             $formData = [
                 'patientId' => $request->input('patient_id'),
-                'breath' => $request->input('breaths'),
+                'oxygenInBlood' => $request->input('oxygen_in_blood'),
             ];
 
             if ($this->sendApiData($apiUrl, $formData)) {
-                return redirect()->route('respiration_rate.index')->with('success', 'Data sent successfully.');
+                return redirect()->route('sp02.index')->with('success', 'Data sent successfully.');
             } else {
-                return redirect()->route('respiration_rate.create')->with('error', 'Error sending data to API.');
+                return redirect()->route('sp02.create')->with('error', 'Error sending data to API.');
             }
         } catch (ValidationException $e) {
-            return redirect()->route('respiration_rate.create')->withErrors($e->errors());
+            return redirect()->route('sp02.create')->withErrors($e->errors());
         }
     }
 }

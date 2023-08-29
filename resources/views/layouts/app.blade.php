@@ -24,7 +24,7 @@
                 <a class="nav-link" href="{{route('heart_rate.index')}}">Heart Rate</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">SpO2</a>
+                <a class="nav-link" href="{{route('sp02.index')}}">SpO2</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Temperature</a>

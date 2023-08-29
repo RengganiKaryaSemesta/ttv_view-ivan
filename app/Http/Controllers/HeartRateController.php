@@ -30,7 +30,7 @@ class HeartRateController extends Controller
                 'beats' => 'required',
             ]);
 
-            $apiUrl = 'https://patientmonitoring.my.id/api/heartRate';
+            $apiUrl = 'heartRate';
 
             $formData = [
                 'patientId' => $request->input('patient_id'),
