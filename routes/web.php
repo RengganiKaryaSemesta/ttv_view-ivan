@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HeartRateController;
+use App\Http\Controllers\NibpController;
 use App\Http\Controllers\RespirationRateController;
 use App\Http\Controllers\Sp02Controller;
 use App\Http\Controllers\TemperatureController;
@@ -32,3 +33,7 @@ Route::post('/sp02',[Sp02Controller::class,'store'])->name('sp02.store');
 Route::get('/temperature',[TemperatureController::class,'index'])->name('temperature.index');
 Route::get('/temperature/create',[TemperatureController::class,'create'])->name('temperature.create');
 Route::post('/temperature',[TemperatureController::class,'store'])->name('temperature.store');
+
+Route::get('/nibp',[NibpController::class,'index'])->name('nibp.index');
+Route::get('/nibp/create',[NibpController::class,'create'])->name('nibp.create');
+Route::post('/nibp',[NibpController::class,'store'])->name('nibp.store');

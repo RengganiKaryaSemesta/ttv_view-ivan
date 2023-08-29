@@ -30,7 +30,7 @@
                 <a class="nav-link" href="{{route('temperature.index')}}">Temperature</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">NIBP</a>
+                <a class="nav-link" href="{{route('nibp.index')}}">NIBP</a>
             </li>
         </ul>
     </div>

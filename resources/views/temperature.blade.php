@@ -23,7 +23,14 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($temperatureData as $data)
+        
+            @php
+            $perPage = 30; // Number of items per page
+            $currentPage = request()->get('page', 1);
+            $start = ($currentPage - 1) * $perPage;
+            @endphp
+
+            @foreach ($temperatureData->slice($start, $perPage) as $data)
                 <tr>
                     <td>{{ $data['id'] }}</td>
                     <td>{{ $data['patient_id'] }}</td>
@@ -35,4 +42,13 @@
             @endforeach
         </tbody>
     </table>
+    <div class="pagination justify-content-center">
+        <ul class="pagination">
+            @for ($i = 1; $i <= ceil($temperatureData->count() / $perPage); $i++)
+                <li class="page-item {{ $i == $currentPage ? 'active' : '' }}">
+                    <a class="page-link" href="{{ route('nibp.index', ['page' => $i]) }}">{{ $i }}</a>
+                </li>
+            @endfor
+        </ul>
+    </div>
 @endsection
