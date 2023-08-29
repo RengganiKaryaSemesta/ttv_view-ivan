@@ -32,6 +32,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('nibp.index')}}">NIBP</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('patients.index')}}">Patients</a>
+            </li>
         </ul>
     </div>
 </nav>

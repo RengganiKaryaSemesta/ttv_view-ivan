@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HeartRateController;
 use App\Http\Controllers\NibpController;
+use App\Http\Controllers\PatientController;
 use App\Http\Controllers\RespirationRateController;
 use App\Http\Controllers\Sp02Controller;
 use App\Http\Controllers\TemperatureController;
@@ -37,3 +38,5 @@ Route::post('/temperature',[TemperatureController::class,'store'])->name('temper
 Route::get('/nibp',[NibpController::class,'index'])->name('nibp.index');
 Route::get('/nibp/create',[NibpController::class,'create'])->name('nibp.create');
 Route::post('/nibp',[NibpController::class,'store'])->name('nibp.store');
+
+Route::get('/patients', [PatientController::class, 'index'])->name('patients.index');
