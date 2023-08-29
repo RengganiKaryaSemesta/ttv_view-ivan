@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RespirationRateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[RespirationRateController::class,'index'])->name('respiration_rate.index');
+Route::get('/create',[RespirationRateController::class,'create'])->name('respiration_rate.create');
+Route::post('/',[RespirationRateController::class,'store'])->name('respiration_rate.store');
