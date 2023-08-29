@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Create Heart Rate Data</h1>
-    
+    <h1>Add Temperature Data</h1>
+
     @if(session('error'))
         <div class="alert alert-danger">
             {{ session('error') }}
         </div>
     @endif
 
-    <form action="{{ route('heart_rate.store') }}" method="POST">
+    <form action="{{ route('temperature.store') }}" method="POST">
         @csrf
 
         <div class="form-group">
@@ -21,9 +21,9 @@
         </div>
 
         <div class="form-group">
-            <label for="beats">Heart Beats</label>
-            <input type="text" class="form-control" id="beats" name="beats">
-            @error('beats')
+            <label for="patient_temp">Patient Temperature</label>
+            <input type="text" class="form-control" id="patient_temp" name="patient_temp">
+            @error('patient_temp')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>

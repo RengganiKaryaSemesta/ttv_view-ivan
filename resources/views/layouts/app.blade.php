@@ -27,7 +27,7 @@
                 <a class="nav-link" href="{{route('sp02.index')}}">SpO2</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Temperature</a>
+                <a class="nav-link" href="{{route('temperature.index')}}">Temperature</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">NIBP</a>
